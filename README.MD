@@ -1,4 +1,4 @@
-Módulo 11 - Estruturas de dados estáticas
+Módulo 11 - Programação Orientada a Objetos Avançada
 
 Escola Secundária Emídio Navarro
 
