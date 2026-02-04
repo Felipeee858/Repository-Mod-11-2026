@@ -49,7 +49,7 @@ namespace _11T_N06_Etapa3
         }
 
 
-
+        public Eventos() { }
         public Eventos(string _nome, DateTime _data, decimal _capacidadeMax,decimal _idade)
         {
             Nome = _nome;

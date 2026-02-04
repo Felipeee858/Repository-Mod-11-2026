@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,7 @@ namespace _11T_N06_Etapa3
         public Eventos Evt { get; private set; }
         
         DateTime Data = DateTime.Now.Date;
+        private DialogResult result = DialogResult.Yes;
 
         public Adicionar_Evento(Eventos _evento)
         {
@@ -26,14 +28,6 @@ namespace _11T_N06_Etapa3
 
             dtpEvento.Value = Data;
             btnCancelar.DialogResult = DialogResult.Cancel;
-
-            
-
-
-
-
-
-
 
         }
 
@@ -59,31 +53,43 @@ namespace _11T_N06_Etapa3
             }
             if (dtpEvento.Value < Data)
             {
-                MessageBox.Show("Erro Data inválida terá que ser uma data igual ou superior ao dia de hoje", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Erro Data inválida terá que ser uma data igual ou superior ao dia de hoje", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 
                 return;
             }
             if (NUpDownIdadeM.Value == 0 || NUpDownLimite.Value == 0)
             {
-                DialogResult result = MessageBox.Show("O valor da Idade Mínima ou do Limite Participantes é inválido caso prima (Não) o valor será automaticante definido como 16", "ERRO", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            
-                if (result == DialogResult.Yes)
+                if (NUpDownIdadeM.Value == 0 && NUpDownLimite.Value == 0)
+                {
+                    result = MessageBox.Show("O valor da Idade Mínima e do Limite Participantes é inválido." +
+                    "\n\nCaso prima (Sim) os valores serão automaticante definidos como 16", "ERRO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+                else if (NUpDownIdadeM.Value == 0)
+                {
+                    result = MessageBox.Show("O valor da Idade Mínima é inválido." +
+                    "\n\nCaso prima (Sim) os valor será automaticante definido como 16", "ERRO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+                else if (NUpDownLimite.Value == 0)
+                {
+                    result = MessageBox.Show("O valor do Limite de Participantes é inválido." +
+                    "\n\nCaso prima (Sim) os valor será automaticante definido como 16", "ERRO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+
+                if (result == DialogResult.No)
                 {
                     return;
                 }
-                else if (result == DialogResult.No)
-                {
-                    Evt = new Eventos(txtNome.Text, dtpEvento.Value, NUpDownLimite.Value, NUpDownIdadeM.Value);
-                    btnConfirmar.DialogResult = DialogResult.OK;
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
                 
+            }
+            if (result == DialogResult.Yes)
+            {
+                Evt = new Eventos(txtNome.Text, dtpEvento.Value, NUpDownLimite.Value, NUpDownIdadeM.Value);
+                btnConfirmar.DialogResult = DialogResult.OK;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
 
 
-             Evt = new Eventos(txtNome.Text, dtpEvento.Value, NUpDownLimite.Value, NUpDownIdadeM.Value);
-             btnConfirmar.DialogResult = DialogResult.OK;
 
         }
 

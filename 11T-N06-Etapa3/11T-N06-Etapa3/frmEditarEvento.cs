@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -100,6 +101,10 @@ namespace _11T_N06_Etapa3
             Evt.IdadeMin = NUpDownIdadeM.Value;
             Evt.CapacidadeMax = NUpDownLimite.Value;
             btnConfirmar.DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+
+
 
         }
 

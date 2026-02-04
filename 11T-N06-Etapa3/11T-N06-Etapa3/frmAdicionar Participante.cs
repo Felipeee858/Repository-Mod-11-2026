@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace _11T_N06_Etapa3
 {
@@ -17,6 +20,7 @@ namespace _11T_N06_Etapa3
         public Eventos Evt { get; private set; }
 
         int idade;
+        bool valido;
 
        
         public frmAdicionar_Participante(Eventos evento)
@@ -47,19 +51,23 @@ namespace _11T_N06_Etapa3
                 return;
             }
 
-            
+
+            if (!IsValidEmail(txtEmail.Text.Trim()))
             {
-}
-            if (NUpDownIdade.Value < Evt.IdadeMin)
+                MessageBox.Show("Erro Email inválido", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+                
+                if (NUpDownIdade.Value < Evt.IdadeMin)
             {
                 
-                DialogResult result = MessageBox.Show("O valor da idade do Participante é inválido caso prima (Não) o valor será automaticante definido como " + Evt.IdadeMin, "ERRO", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult result = MessageBox.Show("O valor da idade do Participante é inválido." + "\n\n Caso prima (Sim) o valor será automaticante definido como " + Evt.IdadeMin, "ERRO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                if (result == DialogResult.Yes)
+                if (result == DialogResult.No)
                 {
                     return;
                 }
-                else if (result == DialogResult.No)
+                else if (result == DialogResult.Yes)
                 {
                     NUpDownIdade.Value= Evt.IdadeMin;
                     part = new Participante(txtNome.Text, NUpDownIdade.Value, txtEmail.Text);
@@ -76,6 +84,18 @@ namespace _11T_N06_Etapa3
         private void frmAdicionar_Participante_Load(object sender, EventArgs e)
         {
 
+        }
+        public static bool IsValidEmail(string email)
+        {
+            try
+            {
+                new MailAddress(email);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

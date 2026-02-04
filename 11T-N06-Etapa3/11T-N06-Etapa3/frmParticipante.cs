@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -61,10 +62,10 @@ namespace _11T_N06_Etapa3
                 return;
             }
 
-            
-            
 
-            
+
+
+
             frmAdicionar_Participante form = new frmAdicionar_Participante(Evt);
 
 
@@ -72,8 +73,27 @@ namespace _11T_N06_Etapa3
 
             if (result == DialogResult.OK)
             {
+                
                 Evt.Part.Add(form.part);
-                MessageBox.Show("Novo Participante adicionado com sucesso", "Participante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                BindingList<Eventos> evt = new BindingList<Eventos>();
+
+                using (FileStream fs = new FileStream("eventos.json", FileMode.Open))
+                {
+                    evt = JsonSerializer.Deserialize<BindingList<Eventos>>(fs);
+
+                }
+                
+                
+                using (FileStream fs = new FileStream("eventos.json", FileMode.Create))
+                {
+                    JsonSerializer.Serialize(fs, evt,
+                        new JsonSerializerOptions { WriteIndented = true });
+                }
+
+
+
             }
         }
 
@@ -119,6 +139,11 @@ namespace _11T_N06_Etapa3
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvDados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     };
 }

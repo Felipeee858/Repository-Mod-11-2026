@@ -79,6 +79,7 @@
             dgvDados.Name = "dgvDados";
             dgvDados.Size = new Size(552, 249);
             dgvDados.TabIndex = 4;
+            dgvDados.CellContentClick += dgvDados_CellContentClick;
             // 
             // btnInscrever
             // 
