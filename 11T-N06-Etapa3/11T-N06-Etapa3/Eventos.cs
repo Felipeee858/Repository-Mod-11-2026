@@ -9,7 +9,9 @@ namespace _11T_N06_Etapa3
 {
     public class Eventos
     {
+        private static int autoID;
 
+        protected int IDD;
         public BindingList<Participante> Part { get; set; } = new BindingList<Participante>();
 
         public const int CAPACIDADE_MIN = 16;
@@ -22,6 +24,10 @@ namespace _11T_N06_Etapa3
 
         public decimal capacidadeMax; //Limite Participantes
 
+        public int ID
+        {
+            get { return IDD; }
+        }
 
         public decimal CapacidadeMax
         {
@@ -52,6 +58,7 @@ namespace _11T_N06_Etapa3
         public Eventos() { }
         public Eventos(string _nome, DateTime _data, decimal _capacidadeMax,decimal _idade)
         {
+            IDD = ++autoID;
             Nome = _nome;
             Data = _data;
             IdadeMin = _idade;

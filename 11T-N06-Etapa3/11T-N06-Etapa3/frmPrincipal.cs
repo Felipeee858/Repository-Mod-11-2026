@@ -5,6 +5,7 @@ using System.Text.Json;
 
 namespace _11T_N06_Etapa3
 {
+    
     public partial class frmPrincipal : Form
     {
         public static BindingList<Eventos> eventos = new BindingList<Eventos>();
@@ -228,7 +229,7 @@ namespace _11T_N06_Etapa3
         {
             if (dgvEventos.Rows.Count == 0)
             {
-                MessageBox.Show("Nenhum evento na lista de dados...", "teste", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nenhum evento na lista de dados...", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -264,5 +265,7 @@ namespace _11T_N06_Etapa3
 
         }
 
+        
+        
     }
 }

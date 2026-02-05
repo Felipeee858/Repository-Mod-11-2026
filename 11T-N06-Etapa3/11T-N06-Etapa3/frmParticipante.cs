@@ -12,17 +12,20 @@ using System.Windows.Forms;
 
 namespace _11T_N06_Etapa3
 {
+    
     public partial class frmParticipante : Form
     {
         private Eventos Evt;
 
-
+        
+        
         public frmParticipante(Eventos _evento)
         {
             InitializeComponent();
             Evt = _evento;
 
         }
+
 
         private void gbParticipante_Enter(object sender, EventArgs e)
         {
@@ -145,5 +148,6 @@ namespace _11T_N06_Etapa3
         {
 
         }
+
     };
 }
