@@ -15,6 +15,7 @@ namespace _11T_N06_Etapa3
     
     public partial class frmParticipante : Form
     {
+        
         private Eventos Evt;
 
         
@@ -80,21 +81,8 @@ namespace _11T_N06_Etapa3
                 Evt.Part.Add(form.part);
 
 
-                BindingList<Eventos> evt = new BindingList<Eventos>();
-
-                using (FileStream fs = new FileStream("eventos.json", FileMode.Open))
-                {
-                    evt = JsonSerializer.Deserialize<BindingList<Eventos>>(fs);
-
-                }
                 
-                
-                using (FileStream fs = new FileStream("eventos.json", FileMode.Create))
-                {
-                    JsonSerializer.Serialize(fs, evt,
-                        new JsonSerializerOptions { WriteIndented = true });
-                }
-
+                MessageBox.Show("Novo Participante adicionado com sucesso", "Participantes", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
             }

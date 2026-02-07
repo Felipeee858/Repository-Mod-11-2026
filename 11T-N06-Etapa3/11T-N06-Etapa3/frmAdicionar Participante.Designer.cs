@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnConfirmar = new Button();
             btnCancelar = new Button();
             lbNome = new Label();
@@ -36,7 +37,10 @@
             txtEmail = new TextBox();
             lbIdade = new Label();
             NUpDownIdade = new NumericUpDown();
+            errorProvider1 = new ErrorProvider(components);
+            lbResultado = new Label();
             ((System.ComponentModel.ISupportInitialize)NUpDownIdade).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // btnConfirmar
@@ -108,11 +112,23 @@
             NUpDownIdade.Size = new Size(213, 23);
             NUpDownIdade.TabIndex = 30;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // lbResultado
+            // 
+            lbResultado.Location = new Point(436, 59);
+            lbResultado.Name = "lbResultado";
+            lbResultado.Size = new Size(161, 147);
+            lbResultado.TabIndex = 31;
+            // 
             // frmAdicionar_Participante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(615, 269);
+            Controls.Add(lbResultado);
             Controls.Add(NUpDownIdade);
             Controls.Add(lbIdade);
             Controls.Add(txtEmail);
@@ -125,6 +141,7 @@
             Text = "frmAdicionar_Participante";
             Load += frmAdicionar_Participante_Load;
             ((System.ComponentModel.ISupportInitialize)NUpDownIdade).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,6 +160,8 @@
         private Label lbEmail;
         private TextBox txtEmail;
         private Label lbIdade;
+        private ErrorProvider errorProvider1;
+        private Label lbResultado;
         // private NumericUpDown NUpDownIdade;
     }
 }

@@ -5,12 +5,11 @@ using System.Text.Json;
 
 namespace _11T_N06_Etapa3
 {
-    
     public partial class frmPrincipal : Form
     {
         public static BindingList<Eventos> eventos = new BindingList<Eventos>();
-         
-        
+
+
 
         bool carregar = false;
 
@@ -18,8 +17,11 @@ namespace _11T_N06_Etapa3
 
         public frmPrincipal()
         {
-            
+
             InitializeComponent();
+
+            MostrarMensagem();
+
             LerJSON form = new LerJSON();
 
             DialogResult result = form.ShowDialog();
@@ -27,7 +29,7 @@ namespace _11T_N06_Etapa3
             if (result == DialogResult.OK)
             {
                 carregar = true;
-                
+
             }
             if (result == DialogResult.Yes)
             {
@@ -62,35 +64,36 @@ namespace _11T_N06_Etapa3
         }
         private void CarregarJson()
         {
-            
-                if (!File.Exists("eventos.json"))
+
+            if (!File.Exists("eventos.json"))
+            {
+                return;
+            }
+            try
+            {
+                using (FileStream fs = new FileStream("eventos.json", FileMode.Open))
                 {
-                    return;
+                    eventos = JsonSerializer.Deserialize<BindingList<Eventos>>(fs);
+
+                    dgvEventos.AutoGenerateColumns = true;
+                    dgvEventos.DataSource = eventos;
+
                 }
-                try
-                {
-                    using (FileStream fs = new FileStream("eventos.json", FileMode.Open))
-                    {
-                        eventos  = JsonSerializer.Deserialize<BindingList<Eventos>>(fs);
-                        
-                            dgvEventos.AutoGenerateColumns = true;
-                            dgvEventos.DataSource = eventos;
-                        
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao carregar ficheiro JSON: " + ex.Message);
-                }
-            
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar ficheiro JSON: " + ex.Message);
+            }
+
         }
 
-        
+
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
 
-            
+
             Adicionar_Evento form = new Adicionar_Evento(null);
 
             DialogResult result = form.ShowDialog();
@@ -101,10 +104,10 @@ namespace _11T_N06_Etapa3
                 eventos.Add(novoEvento);
                 try
                 {
-                  
-                    
-                    
-                    BindingList<Eventos> evt  = new BindingList<Eventos>();
+
+
+
+                    BindingList<Eventos> evt = new BindingList<Eventos>();
                     //evt
 
                     //Se o ficheiro já existe, ler dados anteriores
@@ -113,7 +116,7 @@ namespace _11T_N06_Etapa3
                         using (FileStream fs = new FileStream("eventos.json", FileMode.Open))
                         {
                             evt = JsonSerializer.Deserialize<BindingList<Eventos>>(fs);
-                            
+
                         }
                     }
                     evt.Add(novoEvento);
@@ -134,7 +137,9 @@ namespace _11T_N06_Etapa3
 
 
                 }
-               
+                dgvEventos.DataSource = eventos;
+                txtPesquisa.Text = "";
+
             }
 
         }
@@ -165,16 +170,19 @@ namespace _11T_N06_Etapa3
 
                 if (result == DialogResult.Yes)
                     eventos.RemoveAt(i);
-                    using (FileStream fs = new FileStream("eventos.json", FileMode.Create))
-                    {
-                        JsonSerializer.Serialize(fs, eventos, new JsonSerializerOptions { WriteIndented = true });
-                    }
+                using (FileStream fs = new FileStream("eventos.json", FileMode.Create))
+                {
+                    JsonSerializer.Serialize(fs, eventos, new JsonSerializerOptions { WriteIndented = true });
+                }
             }
             else
                 MessageBox.Show("Não existem eventos na lista de dados...", "teste", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             if (dgvEventos.Rows.Count > 0 && dgvEventos.SelectedRows.Count == 0)
                 dgvEventos.Rows[dgvEventos.Rows.Count - 1].Selected = true;
+            
+            dgvEventos.DataSource = eventos;
+            txtPesquisa.Text = "";
         }
 
 
@@ -206,8 +214,16 @@ namespace _11T_N06_Etapa3
             if (dados != null)
             {
 
-                frmParticipante frm = new frmParticipante((Eventos)dgvEventos.CurrentRow.DataBoundItem);
+                frmParticipante frm = new frmParticipante(dados);
                 frm.ShowDialog();
+
+
+                //Atualiza a lista geral com os novos dados de participantes
+                using (FileStream fs = new FileStream("eventos.json", FileMode.Create))
+                {
+                    JsonSerializer.Serialize(fs, eventos,
+                        new JsonSerializerOptions { WriteIndented = true });
+                }
 
             }
 
@@ -251,13 +267,15 @@ namespace _11T_N06_Etapa3
                     JsonSerializer.Serialize(fs, eventos, new JsonSerializerOptions { WriteIndented = true });
                 }
             }
-                
+            dgvEventos.DataSource = eventos;
+            txtPesquisa.Text = "";
+
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnLerJ_Click(object sender, EventArgs e)
@@ -265,7 +283,41 @@ namespace _11T_N06_Etapa3
 
         }
 
-        
-        
+        private void btnEstatistica_Click(object sender, EventArgs e)
+        {
+            if (dgvEventos.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhum evento na lista de dados...", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            frmEstatistica frm = new frmEstatistica();
+            frm.ShowDialog();
+        }
+
+        public virtual void MostrarMensagem()
+        {
+            MessageBox.Show("Bem Vindo!!! \n\nGestão de Eventos\n\nAproveite a experiência :)", "");
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+            string texto = txtPesquisa.Text.ToLower();
+
+            BindingList<Eventos> filtrados = new BindingList<Eventos>();
+
+            foreach (Eventos ev in eventos)
+            {
+                if (ev.Nome.ToLower().Contains(texto))
+                {
+                    filtrados.Add(ev);
+                }
+            }
+
+            dgvEventos.DataSource = null;
+            dgvEventos.DataSource = filtrados;
+        }
     }
+
 }

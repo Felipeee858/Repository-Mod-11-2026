@@ -10,6 +10,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace _11T_N06_Etapa3
@@ -18,6 +19,7 @@ namespace _11T_N06_Etapa3
     {
         public Participante part { get; private set; } 
         public Eventos Evt { get; private set; }
+        DateTime Data = DateTime.Today;
 
         int idade;
         bool valido;
@@ -44,9 +46,19 @@ namespace _11T_N06_Etapa3
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (txtNome.Text == "" || txtNome.Text == null || txtNome.Text == " ")
+            try
             {
-                MessageBox.Show("Erro Nome inválido", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LerValores();
+
+            }
+            catch (Exception ex)
+            {
+                lbResultado.Text = "Erro inesperado: " + ex.Message;
+
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNome.Text))
+            {
                 
                 return;
             }
@@ -54,11 +66,11 @@ namespace _11T_N06_Etapa3
 
             if (!IsValidEmail(txtEmail.Text.Trim()))
             {
-                MessageBox.Show("Erro Email inválido", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 return;
             }
                 
-                if (NUpDownIdade.Value < Evt.IdadeMin)
+            if (NUpDownIdade.Value < Evt.IdadeMin)
             {
                 
                 DialogResult result = MessageBox.Show("O valor da idade do Participante é inválido." + "\n\n Caso prima (Sim) o valor será automaticante definido como " + Evt.IdadeMin, "ERRO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -70,15 +82,21 @@ namespace _11T_N06_Etapa3
                 else if (result == DialogResult.Yes)
                 {
                     NUpDownIdade.Value= Evt.IdadeMin;
-                    part = new Participante(txtNome.Text, NUpDownIdade.Value, txtEmail.Text);
+                    part = new Participante(txtNome.Text, NUpDownIdade.Value, txtEmail.Text , Data);
                     btnConfirmar.DialogResult = DialogResult.OK;
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
 
             }
-                part = new Participante(txtNome.Text, NUpDownIdade.Value, txtEmail.Text);
-                btnConfirmar.DialogResult = DialogResult.OK;
+            part = new Participante(txtNome.Text, NUpDownIdade.Value, txtEmail.Text, Data);
+            btnConfirmar.DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+
+
+
+
         }
 
         private void frmAdicionar_Participante_Load(object sender, EventArgs e)
@@ -96,6 +114,37 @@ namespace _11T_N06_Etapa3
             {
                 return false;
             }
+        }
+        private void LerValores()
+        {
+
+            errorProvider1.Clear();
+
+            if (string.IsNullOrWhiteSpace(txtNome.Text))
+            {
+                errorProvider1.SetError(txtNome, "Campo obrigatório.");
+                throw new Exception("O campo Nome é obrigatório.");
+            }
+
+
+            if (!IsValidEmail(txtEmail.Text.Trim()))
+            {
+                errorProvider1.SetError(txtEmail, "Email Inválido.");
+                throw new Exception("O campo Email é Inválido.");
+            }
+
+            if (NUpDownIdade.Value < Evt.IdadeMin)
+            {
+                errorProvider1.SetError(NUpDownIdade, "Idade Inválida.");
+                throw new Exception("Erro Idade inválida terá que ser uma Idade igual ou superior ao limite do evento.");
+            }
+
+
+
+
+
+
+
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             txtNome = new TextBox();
             NUpDownIdadeM = new NumericUpDown();
             NUpDownLimite = new NumericUpDown();
@@ -38,8 +39,11 @@
             btnConfirmar = new Button();
             lbData = new Label();
             lbIdade = new Label();
+            errorProvider1 = new ErrorProvider(components);
+            lbResultado = new Label();
             ((System.ComponentModel.ISupportInitialize)NUpDownIdadeM).BeginInit();
             ((System.ComponentModel.ISupportInitialize)NUpDownLimite).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // txtNome
@@ -129,11 +133,23 @@
             lbIdade.TabIndex = 16;
             lbIdade.Text = "Idade Mínima";
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // lbResultado
+            // 
+            lbResultado.Location = new Point(436, 52);
+            lbResultado.Name = "lbResultado";
+            lbResultado.Size = new Size(161, 147);
+            lbResultado.TabIndex = 17;
+            // 
             // Adicionar_Evento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(609, 257);
+            Controls.Add(lbResultado);
             Controls.Add(lbIdade);
             Controls.Add(lbData);
             Controls.Add(btnConfirmar);
@@ -149,6 +165,7 @@
             Load += Adicionar_Evento_Load;
             ((System.ComponentModel.ISupportInitialize)NUpDownIdadeM).EndInit();
             ((System.ComponentModel.ISupportInitialize)NUpDownLimite).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -167,5 +184,7 @@
         private Button btnConfirmar;
         private Label lbData;
         private Label lbIdade;
+        private ErrorProvider errorProvider1;
+        private Label lbResultado;
     }
 }

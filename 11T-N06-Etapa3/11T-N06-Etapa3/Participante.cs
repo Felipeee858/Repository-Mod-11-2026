@@ -10,8 +10,12 @@ namespace _11T_N06_Etapa3
 {
     public class Participante
     {
-
+        
         public string Nome { get; set; }
+
+        public DateTime Data;
+
+        
 
         decimal idade;
         public decimal Idade
@@ -38,15 +42,26 @@ namespace _11T_N06_Etapa3
                     email = "";
             }
         }
+        public DateTime Data_Adicionado
+        {
+            get { return Data; }
+            set { Data = DateTime.Today; }
+        }
 
-        public Participante(string _nome, decimal _idade, string _email)
+        public Participante(string _nome, decimal _idade, string _email, DateTime _data)
         {
             Nome = _nome;
             Idade = _idade;
             Email = _email;
+            Data_Adicionado = _data;
         }
 
-        public Participante(string _nome, string _email) : this(_nome, 16, _email)
+        public Participante(string _nome, string _email, DateTime _data) : this(_nome, 16, _email,_data)
+        {
+
+        }
+
+        public Participante()
         {
 
         }

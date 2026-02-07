@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|c:\\users\\esen\\desktop\\mod-11\\11t-n06-etapa3\\11t-n06-etapa3\\frmadicionar evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|solutionrelative:11t-n06-etapa3\\frmadicionar evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|c:\\users\\esen\\desktop\\mod-11\\11t-n06-etapa3\\11t-n06-etapa3\\frmadicionar evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|solutionrelative:11t-n06-etapa3\\frmadicionar evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|c:\\users\\esen\\desktop\\mod-11\\11t-n06-etapa3\\11t-n06-etapa3\\eventos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|solutionrelative:11t-n06-etapa3\\eventos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|c:\\users\\esen\\desktop\\mod-11\\11t-n06-etapa3\\11t-n06-etapa3\\frmadicionar participante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|solutionrelative:11t-n06-etapa3\\frmadicionar participante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11t-n06-etapa3\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|solutionrelative:11t-n06-etapa3\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|c:\\users\\esen\\desktop\\mod-11\\11t-n06-etapa3\\11t-n06-etapa3\\lerjson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|solutionrelative:11t-n06-etapa3\\lerjson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|c:\\users\\esen\\desktop\\mod-11\\11t-n06-etapa3\\11t-n06-etapa3\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|solutionrelative:11t-n06-etapa3\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|c:\\users\\esen\\desktop\\mod-11\\11t-n06-etapa3\\11t-n06-etapa3\\frmparticipante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|solutionrelative:11t-n06-etapa3\\frmparticipante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|c:\\users\\esen\\desktop\\mod-11\\11t-n06-etapa3\\11t-n06-etapa3\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|solutionrelative:11t-n06-etapa3\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|c:\\users\\esen\\desktop\\mod-11\\11t-n06-etapa3\\11t-n06-etapa3\\eventos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA687736-BD8A-4701-97B6-F23CF4ACB6ED}|11T-N06-Etapa3\\11T-N06-Etapa3.csproj|solutionrelative:11t-n06-etapa3\\eventos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,91 +35,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmAdicionar Evento.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmAdicionar Evento.cs",
-              "RelativeDocumentMoniker": "11T-N06-Etapa3\\frmAdicionar Evento.cs",
-              "ToolTip": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmAdicionar Evento.cs [Projeto]",
-              "RelativeToolTip": "11T-N06-Etapa3\\frmAdicionar Evento.cs [Projeto]",
+              "Title": "frmPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmPrincipal.cs",
+              "RelativeDocumentMoniker": "11T-N06-Etapa3\\frmPrincipal.cs",
+              "ToolTip": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmPrincipal.cs",
+              "RelativeToolTip": "11T-N06-Etapa3\\frmPrincipal.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAhwCkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T00:40:10.529Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Eventos.cs",
-              "DocumentMoniker": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\Eventos.cs",
-              "RelativeDocumentMoniker": "11T-N06-Etapa3\\Eventos.cs",
-              "ToolTip": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\Eventos.cs",
-              "RelativeToolTip": "11T-N06-Etapa3\\Eventos.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAqwDwAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T00:09:16.292Z",
+              "WhenOpened": "2026-02-07T17:56:59.436Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "frmPrincipal.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmPrincipal.cs",
               "RelativeDocumentMoniker": "11T-N06-Etapa3\\frmPrincipal.cs",
               "ToolTip": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmPrincipal.cs [Projeto]",
               "RelativeToolTip": "11T-N06-Etapa3\\frmPrincipal.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T02:24:01.003Z",
+              "WhenOpened": "2026-02-07T17:56:57.826Z",
               "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmAdicionar Evento.cs",
-              "DocumentMoniker": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmAdicionar Evento.cs",
-              "RelativeDocumentMoniker": "11T-N06-Etapa3\\frmAdicionar Evento.cs",
-              "ToolTip": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmAdicionar Evento.cs",
-              "RelativeToolTip": "11T-N06-Etapa3\\frmAdicionar Evento.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAArwD8AAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T18:16:57.8Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmPrincipal.cs",
-              "RelativeDocumentMoniker": "11T-N06-Etapa3\\frmPrincipal.cs",
-              "ToolTip": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmPrincipal.cs",
-              "RelativeToolTip": "11T-N06-Etapa3\\frmPrincipal.cs",
-              "ViewState": "AgIAAOQAAAAAAAAAAAAkwA8BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T14:46:23.862Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmParticipante.cs",
-              "DocumentMoniker": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmParticipante.cs",
-              "RelativeDocumentMoniker": "11T-N06-Etapa3\\frmParticipante.cs",
-              "ToolTip": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmParticipante.cs",
-              "RelativeToolTip": "11T-N06-Etapa3\\frmParticipante.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAwwBQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T16:21:51.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "frmAdicionar Participante.cs",
-              "DocumentMoniker": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmAdicionar Participante.cs",
-              "RelativeDocumentMoniker": "11T-N06-Etapa3\\frmAdicionar Participante.cs",
-              "ToolTip": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\frmAdicionar Participante.cs",
-              "RelativeToolTip": "11T-N06-Etapa3\\frmAdicionar Participante.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAqwDcAAAAMAAAAAAAAAA==",
+              "Title": "Eventos.cs",
+              "DocumentMoniker": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\Eventos.cs",
+              "RelativeDocumentMoniker": "11T-N06-Etapa3\\Eventos.cs",
+              "ToolTip": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\Eventos.cs",
+              "RelativeToolTip": "11T-N06-Etapa3\\Eventos.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAwwCoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T14:46:29.228Z",
+              "WhenOpened": "2026-02-07T17:56:05.068Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LerJSON.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\LerJSON.cs",
+              "RelativeDocumentMoniker": "11T-N06-Etapa3\\LerJSON.cs",
+              "ToolTip": "C:\\Users\\ESEN\\Desktop\\MOD-11\\11T-N06-Etapa3\\11T-N06-Etapa3\\LerJSON.cs [Projeto]",
+              "RelativeToolTip": "11T-N06-Etapa3\\LerJSON.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T17:49:16.499Z",
+              "EditorCaption": " [Projeto]"
             }
           ]
         }

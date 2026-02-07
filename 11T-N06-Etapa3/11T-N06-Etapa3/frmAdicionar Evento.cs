@@ -19,7 +19,7 @@ namespace _11T_N06_Etapa3
         
         DateTime Data = DateTime.Now.Date;
         private DialogResult result = DialogResult.Yes;
-
+        
         public Adicionar_Evento(Eventos _evento)
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace _11T_N06_Etapa3
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Adicionar_Evento_Load(object sender, EventArgs e)
@@ -45,19 +45,29 @@ namespace _11T_N06_Etapa3
 
         {
             
-            if (txtNome.Text == "" || txtNome.Text == null || txtNome.Text==" ") //breakpoint  e F11
+
+            try
             {
-                MessageBox.Show("Erro Nome inválido", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+                LerValores();
+
+            }
+            catch (Exception ex)
+            {
+                lbResultado.Text = "Erro inesperado: " + ex.Message;
+
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNome.Text))
+            {
                 return;
             }
+
             if (dtpEvento.Value < Data)
             {
-                MessageBox.Show("Erro Data inválida terá que ser uma data igual ou superior ao dia de hoje", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                
                 return;
             }
-            if (NUpDownIdadeM.Value == 0 || NUpDownLimite.Value == 0)
+
+                if (NUpDownIdadeM.Value == 0 || NUpDownLimite.Value == 0)
             {
                 if (NUpDownIdadeM.Value == 0 && NUpDownLimite.Value == 0)
                 {
@@ -91,6 +101,42 @@ namespace _11T_N06_Etapa3
 
 
 
+        }
+        private void LerValores()
+        {
+            
+            errorProvider1.Clear();
+           
+            if (string.IsNullOrWhiteSpace(txtNome.Text))
+            {
+                errorProvider1.SetError(txtNome, "Campo obrigatório.");
+                throw new Exception("O campo Nome é obrigatório.");
+                
+                
+            }
+
+            if (dtpEvento.Value < Data)
+            {
+                errorProvider1.SetError(dtpEvento, "Data Inválida.");
+                throw new Exception("Erro Data inválida terá que ser uma data igual ou superior ao dia de hoje.");
+                
+            }
+
+            if (NUpDownIdadeM.Value == 0)
+            {
+                errorProvider1.SetError(NUpDownIdadeM, "Idade Inválida.");
+                throw new Exception("Idade Inválida.");
+                
+            }
+
+            if (NUpDownLimite.Value == 0)
+            {
+                errorProvider1.SetError(NUpDownLimite, "Limite Não Preenchido.");
+                throw new Exception("Limite Inválido.");
+                
+            }
+            
+            
         }
 
 

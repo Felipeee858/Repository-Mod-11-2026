@@ -7,18 +7,26 @@ using System.Threading.Tasks;
 
 namespace _11T_N06_Etapa3
 {
+    public class NotificadorErro : frmPrincipal
+    {
+        public override void MostrarMensagem()
+        {
+            MessageBox.Show("Ocorreu um erro no sistema", "Erro");
+        }
+    }
+
     public class Eventos
     {
         private static int autoID;
 
-        protected int IDD;
+        protected int IDD  ;
         public BindingList<Participante> Part { get; set; } = new BindingList<Participante>();
 
         public const int CAPACIDADE_MIN = 16;
 
         public const int Idade_MIN = 16;
-        public string Nome { get; set; }
-        public DateTime Data { get; set; }
+        
+        
 
         decimal idade;
 
@@ -27,8 +35,11 @@ namespace _11T_N06_Etapa3
         public int ID
         {
             get { return IDD; }
+            
         }
 
+        public string Nome { get; set; }
+        public DateTime Data { get; set; }
         public decimal CapacidadeMax
         {
             get { return capacidadeMax; }
@@ -86,6 +97,8 @@ namespace _11T_N06_Etapa3
             }
             return valido;
         }
+
+        
     }
 }
 
